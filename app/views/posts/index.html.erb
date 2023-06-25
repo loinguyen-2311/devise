@@ -1,5 +1,7 @@
-<p style="color: green"><%= notice %></p>
-
+<!--<p style="color: green"><%#= notice %></p>-->
+<% if current_user %>
+  Hello <%= current_user.email %>
+<% end %>
 <h1>Posts</h1>
 
 <div id="posts">
