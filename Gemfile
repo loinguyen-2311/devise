@@ -21,6 +21,11 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
+# my gems
+gem 'devise', '~> 4.9', '>= 4.9.2'
+gem "jsbundling-rails"
+gem "cssbundling-rails"
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
@@ -70,3 +75,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+# gem 'sassc'
+# gem "sass-rails"
+# gem "bootstrap-sass"
+# gem "jquery-rails"
+
