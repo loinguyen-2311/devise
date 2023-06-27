@@ -79,4 +79,11 @@ end
 # gem "sass-rails"
 # gem "bootstrap-sass"
 # gem "jquery-rails"
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'json'
+gem 'dotenv-rails'
 
+# gem này sử dụng để tránh lỗi authen
+# gem "omniauth-rails_csrf_protection"
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
