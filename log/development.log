@@ -3834,3 +3834,2316 @@ Processing by PostsController#index as TURBO_STREAM
 Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.7ms | Allocations: 3086)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7334416522997531520)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7334416522997531520)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-06-27 11:53:37 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1720)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3231)
+Completed 200 OK in 13ms (Views: 7.2ms | ActiveRecord: 0.6ms | Allocations: 7886)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 11:53:41 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 2096)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 5280)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 5369)
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 172.7ms | Allocations: 12248)
+
+
+  
+ActionView::Template::Error (undefined method `omniauth_authorize_path' for #<ActionView::Base:0x0000000000d4f8>):
+    20: 
+    21: <%- if devise_mapping.omniauthable? %>
+    22:   <%- resource_class.omniauth_providers.each do |provider| %>
+    23:     <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false } %><br />
+    24:   <% end %>
+    25: <% end %>
+  
+app/views/devise/shared/_links.html.erb:23
+app/views/devise/shared/_links.html.erb:22:in `each'
+app/views/devise/shared/_links.html.erb:22
+app/views/devise/registrations/new.html.erb:29
+Started GET "/" for 127.0.0.1 at 2023-06-27 13:09:14 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "816c72d2-6a4e-4812-ab0e-d07ae1bad974"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 22.0ms | Allocations: 20054)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 295)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 20796)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 5.4ms | Allocations: 21078)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7334416522997531520)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to UpdateUsers (20230627061020)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (176.7ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" character varying(50) DEFAULT ''[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying(500) DEFAULT ''[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230627061020"]]
+  [1m[36mTRANSACTION (36.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7334416522997531520)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 13:13:20 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 247)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 943)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 4480)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5937)
+Completed 200 OK in 339ms (Views: 260.9ms | ActiveRecord: 2.1ms | Allocations: 17623)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:13:27 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://0.0.0.0:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 571)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:13:27 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 509)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2259)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2907)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4269)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:13:32 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://0.0.0.0:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 312)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:13:32 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 2010)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 2676)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:13:33 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://0.0.0.0:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 312)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:13:33 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2010)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 2655)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 13:13:37 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 309)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1418)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1992)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2546)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:13:39 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://0.0.0.0:3000/users/sign_in
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:13:39 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2009)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 2646)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:14:13 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://0.0.0.0:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:14:13 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2009)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 2646)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:17:26 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:20:17 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 10)
+Completed 404 Not Found in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 2361)
+
+
+Started GET "/users/auth/google_oauth2/callback" for 127.0.0.1 at 2023-06-27 13:20:37 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 1886)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:20:37 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 1036)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 3902)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 5308)
+Completed 200 OK in 17ms (Views: 7.9ms | ActiveRecord: 1.8ms | Allocations: 14725)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:20:42 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 363)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:20:42 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2010)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 2885)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:20:48 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:20:48 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2009)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 2859)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:20:49 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 312)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:20:49 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2010)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 2862)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:20:51 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 312)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:20:51 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2010)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 2869)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 13:20:55 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1465)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2104)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 3204)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 13:20:56 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1048)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1601)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1873)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 13:20:58 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 233)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 336)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2258)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2907)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 4169)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:21:00 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:21:00 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2009)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 2842)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:21:21 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 1063)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 4404)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5840)
+Completed 200 OK in 36ms (Views: 8.9ms | ActiveRecord: 2.1ms | Allocations: 17995)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:21:23 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 630)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:21:23 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2013)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 2848)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:25:15 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:29:29 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 10)
+Completed 404 Not Found in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 2276)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 13:29:34 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2112)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 368)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3560)
+Completed 200 OK in 19ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 6600)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 13:29:36 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 912)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 4087)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 4737)
+Completed 200 OK in 15ms (Views: 6.2ms | ActiveRecord: 2.1ms | Allocations: 12862)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:29:37 +0700
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 13:32:14 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 309)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1419)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1992)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 2754)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 13:32:17 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 309)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1418)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1991)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 2748)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:32:18 +0700
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:35:15 +0700
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:37:09 +0700
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 13:39:22 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 309)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1418)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 1991)
+Completed 200 OK in 11ms (Views: 8.7ms | Allocations: 2751)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:39:24 +0700
+Started GET "/users/auth/google_oauth2/callback?state=2865ca508aedefdf1450f3410be3503a86327b9948d9f230&code=4/0AbUR2VMy2LvNXNq90jrgdh1DT1t2doSq84CKBA4Ko8cEJYltJo06EjZfwbPXuNg-Jjy4vQ&scope=email%20openid%20https://www.googleapis.com/auth/userinfo.email&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 13:39:41 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"2865ca508aedefdf1450f3410be3503a86327b9948d9f230", "code"=>"4/0AbUR2VMy2LvNXNq90jrgdh1DT1t2doSq84CKBA4Ko8cEJYltJo06EjZfwbPXuNg-Jjy4vQ", "scope"=>"email openid https://www.googleapis.com/auth/userinfo.email", "authuser"=>"2", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1ms (Allocations: 360)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:39:42 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 509)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2260)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2908)
+Completed 200 OK in 9ms (Views: 6.0ms | Allocations: 4414)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:43:58 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 1063)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 4404)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5840)
+Completed 200 OK in 36ms (Views: 12.9ms | ActiveRecord: 2.3ms | Allocations: 18003)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:44:00 +0700
+Started GET "/users/auth/google_oauth2/callback?state=a48dacde4b523c08fc5a24d47d1d71d01e13179e9eabef20&code=4/0AbUR2VPZaCujiSOmQUc90jjXZUwEa5PwmzavpxjQ4ya8xYBBrnFouhMvOr6rGxjNu9BTAw&scope=email%20https://www.googleapis.com/auth/gmail.modify%20https://www.googleapis.com/auth/userinfo.email%20openid&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 13:44:21 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"a48dacde4b523c08fc5a24d47d1d71d01e13179e9eabef20", "code"=>"4/0AbUR2VPZaCujiSOmQUc90jjXZUwEa5PwmzavpxjQ4ya8xYBBrnFouhMvOr6rGxjNu9BTAw", "scope"=>"email https://www.googleapis.com/auth/gmail.modify https://www.googleapis.com/auth/userinfo.email openid", "authuser"=>"2", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 512)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:44:22 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2013)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 2850)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:47:13 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2006)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2810)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:47:23 +0700
+Started GET "/users/auth/google_oauth2/callback?state=7218d3397c00335ab85aaaa43c3544e0c6ff920fefced136&code=4/0AbUR2VPQ6XU4O91mwLe6Txq-kHSkobanHaF7QRS_FYx_iCZh8vnCI4DK3Pp2ywRcHHOb_A&scope=email%20https://www.googleapis.com/auth/gmail.modify%20https://www.googleapis.com/auth/userinfo.email%20openid&authuser=5&prompt=consent" for 127.0.0.1 at 2023-06-27 13:47:36 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"7218d3397c00335ab85aaaa43c3544e0c6ff920fefced136", "code"=>"4/0AbUR2VPQ6XU4O91mwLe6Txq-kHSkobanHaF7QRS_FYx_iCZh8vnCI4DK3Pp2ywRcHHOb_A", "scope"=>"email https://www.googleapis.com/auth/gmail.modify https://www.googleapis.com/auth/userinfo.email openid", "authuser"=>"5", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 262)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:47:37 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2009)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 2831)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:51:10 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 1063)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 4405)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 5841)
+Completed 200 OK in 34ms (Views: 13.3ms | ActiveRecord: 2.1ms | Allocations: 17995)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:51:12 +0700
+Started GET "/users/auth/google_oauth2/callback?state=1460bfb1879a4853f646ab5c9f66196d544deab7703a6f0c&code=4%2F0AbUR2VNJloRWHONLcmR0FgXUkCKDYHuClJTbevHgHRgsNeVpdAk6M9QyzMDIuNRQQAJc-w&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify+openid&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 13:51:16 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"1460bfb1879a4853f646ab5c9f66196d544deab7703a6f0c", "code"=>"4/0AbUR2VNJloRWHONLcmR0FgXUkCKDYHuClJTbevHgHRgsNeVpdAk6M9QyzMDIuNRQQAJc-w", "scope"=>"email https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/gmail.modify openid", "authuser"=>"2", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 512)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:51:16 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2013)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 2835)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:51:49 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1462)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2027)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 2528)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:51:49 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1450)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2015)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 2621)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 13:54:19 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 233)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 336)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2258)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2908)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 4171)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 13:56:17 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 247)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 943)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 4479)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5936)
+Completed 200 OK in 34ms (Views: 12.2ms | ActiveRecord: 2.0ms | Allocations: 17827)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:56:19 +0700
+Started GET "/users/auth/google_oauth2/callback?state=ac534c055f98d649f483ce399bafc689579b1a376f99f76b&code=4%2F0AbUR2VP0fbEaJKeuG2Owb3fmKxop1bCJE6Yb-03sIJ6-gTEzf2vEUOE_A7i2HeaQUl_3Uw&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify+openid&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 13:56:22 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"ac534c055f98d649f483ce399bafc689579b1a376f99f76b", "code"=>"4/0AbUR2VP0fbEaJKeuG2Owb3fmKxop1bCJE6Yb-03sIJ6-gTEzf2vEUOE_A7i2HeaQUl_3Uw", "scope"=>"email https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/gmail.modify openid", "authuser"=>"2", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 453)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:56:24 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 509)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2259)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2907)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 4441)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:56:31 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2006)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 2841)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 13:56:35 +0700
+Started GET "/users/auth/google_oauth2/callback?state=6744d73e063306625ded2fc6f5aa9e98832f3b041dd4ed28&code=4%2F0AbUR2VMjtsZC5JOW1kINhwbjtAk4pIxLyLn2gboEgR7rvBXNmaB4ivLyGlXfnnGz5aijUg&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify+openid&authuser=5&prompt=consent" for 127.0.0.1 at 2023-06-27 13:56:40 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"6744d73e063306625ded2fc6f5aa9e98832f3b041dd4ed28", "code"=>"4/0AbUR2VMjtsZC5JOW1kINhwbjtAk4pIxLyLn2gboEgR7rvBXNmaB4ivLyGlXfnnGz5aijUg", "scope"=>"email https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/gmail.modify openid", "authuser"=>"5", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 262)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 13:56:40 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2009)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 2840)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 14:07:53 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 1063)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4404)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 5840)
+Completed 200 OK in 34ms (Views: 13.0ms | ActiveRecord: 2.1ms | Allocations: 17988)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:07:54 +0700
+Started GET "/users/auth/google_oauth2/callback?state=31afef882e7252b5e32de667393f9680e81598e5e2e42f72&code=4%2F0AbUR2VNjoFN_g8mU9ucpzoLp6Lq4keXf648E5wcNMhgOxH3uaICzci36iEblfIBvFH9UMQ&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify+openid&authuser=5&prompt=consent" for 127.0.0.1 at 2023-06-27 14:07:58 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"31afef882e7252b5e32de667393f9680e81598e5e2e42f72", "code"=>"4/0AbUR2VNjoFN_g8mU9ucpzoLp6Lq4keXf648E5wcNMhgOxH3uaICzci36iEblfIBvFH9UMQ", "scope"=>"email https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/gmail.modify openid", "authuser"=>"5", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 512)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 14:07:59 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2013)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 2880)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 14:09:17 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 999)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 4340)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 5777)
+Completed 200 OK in 52ms (Views: 31.4ms | ActiveRecord: 2.2ms | Allocations: 17943)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:09:20 +0700
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 7)
+Completed 404 Not Found in 53ms (Views: 52.9ms | ActiveRecord: 0.0ms | Allocations: 583)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:09:32 +0700
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 404 Not Found in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 183)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 14:11:44 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 991)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 4332)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5769)
+Completed 200 OK in 30ms (Views: 9.5ms | ActiveRecord: 2.1ms | Allocations: 17929)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:11:46 +0700
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 7)
+Completed 404 Not Found in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 583)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:11:50 +0700
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 404 Not Found in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 183)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:12:09 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 10)
+Completed 404 Not Found in 3ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 2276)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:12:14 +0700
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 404 Not Found in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 183)
+
+
+Started GET "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:12:18 +0700
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 404 Not Found in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 183)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 14:12:36 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 1063)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 4404)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 5840)
+Completed 200 OK in 30ms (Views: 10.0ms | ActiveRecord: 2.0ms | Allocations: 17985)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:12:37 +0700
+Started GET "/users/auth/google_oauth2/callback?state=4981fd611100c039eef13cd01dbd882afd893effbe9e3d24&code=4%2F0AbUR2VOMGVNE9PI42EateRsQvRyZ0GuKpoZTUAfQRXn9EG_pafaXEAjLsUenBN2QAmp7jQ&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify+openid&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 14:12:47 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"4981fd611100c039eef13cd01dbd882afd893effbe9e3d24", "code"=>"4/0AbUR2VOMGVNE9PI42EateRsQvRyZ0GuKpoZTUAfQRXn9EG_pafaXEAjLsUenBN2QAmp7jQ", "scope"=>"email https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/gmail.modify openid", "authuser"=>"2", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 512)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 14:12:48 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 2013)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 2850)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 14:19:07 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2118)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3595)
+Completed 200 OK in 15ms (Views: 7.5ms | ActiveRecord: 0.7ms | Allocations: 8250)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 14:19:09 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 20.9ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 916)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 106.7ms | Allocations: 4097)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 107.3ms | Allocations: 4747)
+Completed 200 OK in 134ms (Views: 108.1ms | ActiveRecord: 1.9ms | Allocations: 12862)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:19:11 +0700
+Started GET "/users/auth/google_oauth2/callback?state=e136a7b8ff6f6e538b7b9e0686b7d5bf39aad8c89aa491d8&code=4%2F0AbUR2VNP37jsjCv6cYU1ULpNSztYs5JMo8N-dMaYwQ913zbKbCocu0gihmfs1yMjk4NOHA&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify+openid&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 14:19:13 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"e136a7b8ff6f6e538b7b9e0686b7d5bf39aad8c89aa491d8", "code"=>"4/0AbUR2VNP37jsjCv6cYU1ULpNSztYs5JMo8N-dMaYwQ913zbKbCocu0gihmfs1yMjk4NOHA", "scope"=>"email https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/gmail.modify openid", "authuser"=>"2", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 453)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 14:19:14 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 509)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 59.8ms | Allocations: 2259)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 60.6ms | Allocations: 2907)
+Completed 200 OK in 96ms (Views: 61.7ms | ActiveRecord: 0.0ms | Allocations: 4477)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 14:20:08 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 1063)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 4404)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5840)
+Completed 200 OK in 30ms (Views: 9.4ms | ActiveRecord: 2.1ms | Allocations: 18007)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:20:09 +0700
+Started GET "/users/auth/google_oauth2/callback?state=f99bb0e61bfc1c73209573dc541b270bf2cb725cea4380d9&code=4%2F0AbUR2VMi_I9J9LMOXwO7Ai9ZIY90995gOARdO1mwgkGynSRBLNY-H1iyDgcG0vo-SAaQow&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fgmail.modify+openid&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 14:20:11 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"f99bb0e61bfc1c73209573dc541b270bf2cb725cea4380d9", "code"=>"4/0AbUR2VMi_I9J9LMOXwO7Ai9ZIY90995gOARdO1mwgkGynSRBLNY-H1iyDgcG0vo-SAaQow", "scope"=>"email https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/gmail.modify openid", "authuser"=>"2", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 512)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 14:20:12 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 363)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1440)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2013)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 2880)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 14:22:09 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 1063)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4404)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 5840)
+Completed 200 OK in 32ms (Views: 9.8ms | ActiveRecord: 2.1ms | Allocations: 18022)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:22:10 +0700
+Started GET "/users/auth/google_oauth2/callback?state=fe477c8a7a9f04f090085d1a8d025290c5aa759e969deadc&code=4%2F0AbUR2VPAF1fzg0AkzjS-kLxTSYoOMD1atmn0JbyhLWfmAcxb0H2MtJbsWnfhJfQJP-2r-Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 14:22:13 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"fe477c8a7a9f04f090085d1a8d025290c5aa759e969deadc", "code"=>"4/0AbUR2VPAF1fzg0AkzjS-kLxTSYoOMD1atmn0JbyhLWfmAcxb0H2MtJbsWnfhJfQJP-2r-Q", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"2", "prompt"=>"consent"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "108343997463357728127"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `create_from_provider_data'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:16:in `create_from_provider_data'
+  [1m[36mUser Exists? (5.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "antipro.1995@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `create_from_provider_data'
+  [1m[36mUser Create (4.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "antipro.1995@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-27 07:22:14.102135"], ["updated_at", "2023-06-27 07:22:14.102135"], ["provider", "google_oauth2"], ["uid", "108343997463357728127"]]
+  ↳ app/models/user.rb:16:in `create_from_provider_data'
+  [1m[36mTRANSACTION (40.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:16:in `create_from_provider_data'
+Started GET "/users/auth/google_oauth2/callback?state=fe477c8a7a9f04f090085d1a8d025290c5aa759e969deadc&code=4%2F0AbUR2VPAF1fzg0AkzjS-kLxTSYoOMD1atmn0JbyhLWfmAcxb0H2MtJbsWnfhJfQJP-2r-Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 14:22:49 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"fe477c8a7a9f04f090085d1a8d025290c5aa759e969deadc", "code"=>"4/0AbUR2VPAF1fzg0AkzjS-kLxTSYoOMD1atmn0JbyhLWfmAcxb0H2MtJbsWnfhJfQJP-2r-Q", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"2", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 3125)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 14:22:49 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 1044)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 3899)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 5315)
+Completed 200 OK in 21ms (Views: 9.5ms | ActiveRecord: 2.4ms | Allocations: 15247)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:22:52 +0700
+Started GET "/users/auth/google_oauth2/callback?state=ceb3f9be68686a821d52b7f8b7c817cff7ade70e936459d8&code=4%2F0AbUR2VPopiLWMYeL3SeULM2I5SRt8wWH2BryaT_uymaRSdTX2PAS4JLGV5uEOwVSYy4Iog&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 14:22:55 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"ceb3f9be68686a821d52b7f8b7c817cff7ade70e936459d8", "code"=>"4/0AbUR2VPopiLWMYeL3SeULM2I5SRt8wWH2BryaT_uymaRSdTX2PAS4JLGV5uEOwVSYy4Iog", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"2", "prompt"=>"consent"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "108343997463357728127"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 2883)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 14:22:55 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "55e89f12-52e2-4e2c-988f-80a56741e14d"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2247)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 293)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3069)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 4168)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-06-27 14:31:08 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "55e89f12-52e2-4e2c-988f-80a56741e14d"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 29ms (ActiveRecord: 2.3ms | Allocations: 14193)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 14:31:08 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1790)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3267)
+Completed 200 OK in 33ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 5789)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 14:31:10 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 912)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 3928)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4578)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 6007)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:31:12 +0700
+Started GET "/users/auth/google_oauth2/callback?state=fa404f7c3861468439c1682a9020139cca50bf485aee2a08&code=4%2F0AbUR2VOvLy0rTFxc-D_zBkD6M5c6mr9rWrOJU_DrNGTq9vYxrFQFwUwoLhz5e-wsyhnV7w&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=5&prompt=consent" for 127.0.0.1 at 2023-06-27 14:31:16 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"fa404f7c3861468439c1682a9020139cca50bf485aee2a08", "code"=>"4/0AbUR2VOvLy0rTFxc-D_zBkD6M5c6mr9rWrOJU_DrNGTq9vYxrFQFwUwoLhz5e-wsyhnV7w", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"5", "prompt"=>"consent"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "100097363832880626438"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `create_from_provider_data'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:16:in `create_from_provider_data'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "phucloi.2311@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `create_from_provider_data'
+  [1m[36mUser Create (4.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "phucloi.2311@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-27 07:31:17.596070"], ["updated_at", "2023-06-27 07:31:17.596070"], ["provider", "google_oauth2"], ["uid", "100097363832880626438"]]
+  ↳ app/models/user.rb:16:in `create_from_provider_data'
+  [1m[36mTRANSACTION (13.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:16:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 198ms (ActiveRecord: 19.1ms | Allocations: 6387)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 14:31:17 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "fa2c7e57-ed97-4c5f-a14f-c127b7f03915"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1821)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2563)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 2837)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-06-27 14:33:50 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "fa2c7e57-ed97-4c5f-a14f-c127b7f03915"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 26ms (ActiveRecord: 2.4ms | Allocations: 14178)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 14:33:50 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1778)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3255)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 5777)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "55e89f12-52e2-4e2c-988f-80a56741e14d"]]
+  [1m[36mTRANSACTION (44.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "816c72d2-6a4e-4812-ab0e-d07ae1bad974"]]
+  [1m[36mTRANSACTION (39.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "fa2c7e57-ed97-4c5f-a14f-c127b7f03915"]]
+  [1m[36mTRANSACTION (11.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 14:35:40 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 912)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3928)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4578)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 6007)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 14:35:42 +0700
+Started GET "/users/auth/google_oauth2/callback?state=969c4e7d2b25e1f4ed5f1e5c28182cb28051be1bcf31db46&code=4%2F0AbUR2VPIo7uIQJFWr2lCnGlgKrvPCBYfX2_oM-173SF73MmqCaLGkxO2rgjHw8aBF18udA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 14:35:45 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"969c4e7d2b25e1f4ed5f1e5c28182cb28051be1bcf31db46", "code"=>"4/0AbUR2VPIo7uIQJFWr2lCnGlgKrvPCBYfX2_oM-173SF73MmqCaLGkxO2rgjHw8aBF18udA", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"2", "prompt"=>"consent"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "108343997463357728127"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Exists? (5.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "antipro.1995@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "antipro.1995@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-27 07:35:46.100665"], ["updated_at", "2023-06-27 07:35:46.100665"], ["provider", "google_oauth2"], ["uid", "108343997463357728127"]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 199ms (ActiveRecord: 21.4ms | Allocations: 6373)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 14:35:46 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "1f4646fe-faee-471f-bd24-a57b688e81f7"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1803)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2544)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 2818)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-06-27 15:35:56 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "1f4646fe-faee-471f-bd24-a57b688e81f7"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 395ms (ActiveRecord: 2.3ms | Allocations: 14155)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 15:35:57 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1772)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3249)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 5771)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 15:35:58 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 912)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 3928)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4578)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 6007)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 15:36:00 +0700
+Started GET "/users/auth/google_oauth2/callback?state=a8ac82e871b09ad82488003bb0acb1012c3c04079e2bca17&code=4%2F0AbUR2VM7bblD7ZPcknK72FETKKc_qkckApihUrM4xG8iCUlN7Xd26a-_vuOS8wLLjcy53Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=5&prompt=consent" for 127.0.0.1 at 2023-06-27 15:36:05 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"a8ac82e871b09ad82488003bb0acb1012c3c04079e2bca17", "code"=>"4/0AbUR2VM7bblD7ZPcknK72FETKKc_qkckApihUrM4xG8iCUlN7Xd26a-_vuOS8wLLjcy53Q", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"5", "prompt"=>"consent"}
+Started GET "/users/auth/google_oauth2/callback?state=a8ac82e871b09ad82488003bb0acb1012c3c04079e2bca17&code=4%2F0AbUR2VM7bblD7ZPcknK72FETKKc_qkckApihUrM4xG8iCUlN7Xd26a-_vuOS8wLLjcy53Q&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=5&prompt=consent" for 127.0.0.1 at 2023-06-27 15:40:40 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"a8ac82e871b09ad82488003bb0acb1012c3c04079e2bca17", "code"=>"4/0AbUR2VM7bblD7ZPcknK72FETKKc_qkckApihUrM4xG8iCUlN7Xd26a-_vuOS8wLLjcy53Q", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"5", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 3316)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 15:40:41 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 1058)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 4064)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 440)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5488)
+Completed 200 OK in 17ms (Views: 7.7ms | ActiveRecord: 1.9ms | Allocations: 16103)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 15:42:07 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/google_oauth2/callback?state=5488358390b2f5ae262da8b4a48409553a0312fc4765e2a8&code=4%2F0AbUR2VOf_qcN547tyh6MeHqO64aomnLGBk6Ful07iaxZvdlmKsiQVx58RQ6p2U58fjBAaQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=5&prompt=consent" for 127.0.0.1 at 2023-06-27 15:42:11 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"5488358390b2f5ae262da8b4a48409553a0312fc4765e2a8", "code"=>"4/0AbUR2VOf_qcN547tyh6MeHqO64aomnLGBk6Ful07iaxZvdlmKsiQVx58RQ6p2U58fjBAaQ", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"5", "prompt"=>"consent"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "100097363832880626438"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "phucloi.2311@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Create (10.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "phucloi.2311@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-27 08:44:13.515832"], ["updated_at", "2023-06-27 08:44:13.515832"], ["provider", "google_oauth2"], ["uid", "100097363832880626438"]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (14.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 121598ms (ActiveRecord: 28.0ms | Allocations: 52719)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 15:44:13 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "aa42c7c3-af88-413b-b198-b34b9e2af8ae"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2535)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4165)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 6831)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-06-27 15:46:09 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "aa42c7c3-af88-413b-b198-b34b9e2af8ae"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 27ms (ActiveRecord: 2.6ms | Allocations: 14154)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 15:46:09 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1778)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3255)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 5777)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 15:46:11 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 3.0ms | Allocations: 912)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 18.8ms | Allocations: 3928)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4578)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 6004)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 15:46:13 +0700
+Started GET "/users/auth/google_oauth2/callback?state=3a6f5348329845bae7f87dde088864a6ffffb13c4a7aadca&code=4%2F0AbUR2VProj9ZWIxhrLfiau3JOZnDtWGO445_CQTNqgltonFQ9tSv3nLlylbP79naLvKUVQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=7&prompt=consent" for 127.0.0.1 at 2023-06-27 15:46:17 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"3a6f5348329845bae7f87dde088864a6ffffb13c4a7aadca", "code"=>"4/0AbUR2VProj9ZWIxhrLfiau3JOZnDtWGO445_CQTNqgltonFQ9tSv3nLlylbP79naLvKUVQ", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"7", "prompt"=>"consent"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "110136296100392097870"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "patc.222k@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "patc.222k@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-27 08:46:17.873392"], ["updated_at", "2023-06-27 08:46:17.873392"], ["provider", "google_oauth2"], ["uid", "110136296100392097870"]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (44.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+Started GET "/users/auth/google_oauth2/callback?state=3a6f5348329845bae7f87dde088864a6ffffb13c4a7aadca&code=4%2F0AbUR2VProj9ZWIxhrLfiau3JOZnDtWGO445_CQTNqgltonFQ9tSv3nLlylbP79naLvKUVQ&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=7&prompt=consent" for 127.0.0.1 at 2023-06-27 15:46:53 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"3a6f5348329845bae7f87dde088864a6ffffb13c4a7aadca", "code"=>"4/0AbUR2VProj9ZWIxhrLfiau3JOZnDtWGO445_CQTNqgltonFQ9tSv3nLlylbP79naLvKUVQ", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"7", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 3125)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 15:46:53 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 1044)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3899)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 436)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 5315)
+Completed 200 OK in 19ms (Views: 8.7ms | ActiveRecord: 2.2ms | Allocations: 15228)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 15:46:56 +0700
+Started GET "/users/auth/google_oauth2/callback?state=7eeb273962c5651661763d26f6cc534067a3cdae8040c465&code=4%2F0AbUR2VMNJ7MF2Oow4sFGKapdHjmBiJIYt27EOa4Ih4NX8K0cVhHsLvq9HrgE_BQTZg3BsA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=7&prompt=consent" for 127.0.0.1 at 2023-06-27 15:46:58 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"7eeb273962c5651661763d26f6cc534067a3cdae8040c465", "code"=>"4/0AbUR2VMNJ7MF2Oow4sFGKapdHjmBiJIYt27EOa4Ih4NX8K0cVhHsLvq9HrgE_BQTZg3BsA", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"7", "prompt"=>"consent"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "110136296100392097870"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 979410ms (ActiveRecord: 0.5ms | Allocations: 1281559)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:03:18 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "2cf94c56-cefb-4c20-b7b9-3e7b2b546c8f"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 14.8ms | Allocations: 2257)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 293)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 3079)
+Completed 200 OK in 20ms (Views: 16.9ms | ActiveRecord: 0.8ms | Allocations: 4187)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-06-27 16:04:03 +0700
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "2cf94c56-cefb-4c20-b7b9-3e7b2b546c8f"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 112ms (ActiveRecord: 0.7ms | Allocations: 10590)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:04:03 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1060)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 113)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 1680)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.5ms | Allocations: 2001)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:04:34 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 233)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 336)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2263)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2912)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 4178)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 16:04:36 +0700
+Started GET "/users/auth/google_oauth2/callback?state=f4c8ef9ce3486bd2bb1f7f6478c0d5d51e08036f2da9b86c&code=4%2F0AbUR2VMoUi5SEmn-XJVXKLSfIau6U_cTg7FDPfA4vOFfxkoAZUd-q3moOIOh_zb6Lg5wow&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent" for 127.0.0.1 at 2023-06-27 16:04:39 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"f4c8ef9ce3486bd2bb1f7f6478c0d5d51e08036f2da9b86c", "code"=>"4/0AbUR2VMoUi5SEmn-XJVXKLSfIau6U_cTg7FDPfA4vOFfxkoAZUd-q3moOIOh_zb6Lg5wow", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "106344239749143214434"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "phucloi.dev@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "phucloi.dev@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-27 09:04:40.024993"], ["updated_at", "2023-06-27 09:04:40.024993"], ["provider", "google_oauth2"], ["uid", "106344239749143214434"]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (16.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 383426ms (ActiveRecord: 19.1ms | Allocations: 106053)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:11:03 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c405a9a0-2634-4d28-8079-c8e1e21304d7"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 5138)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 534)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 6573)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 3.1ms | Allocations: 7925)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-06-27 16:11:14 +0700
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c405a9a0-2634-4d28-8079-c8e1e21304d7"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 44ms (ActiveRecord: 0.7ms | Allocations: 2397)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:11:14 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1073)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 113)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 1687)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.6ms | Allocations: 2009)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:11:16 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 225)
+  Rendered devise/shared/_links.html.erb (Duration: 3.5ms | Allocations: 773)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 2662)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 3311)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 4687)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:11:19 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 309)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1418)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1991)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2738)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:11:33 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 247)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 943)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 4478)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 5935)
+Completed 200 OK in 23ms (Views: 10.6ms | ActiveRecord: 1.9ms | Allocations: 17835)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:12:12 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 247)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 943)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 4479)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 6020)
+Completed 200 OK in 32ms (Views: 9.8ms | ActiveRecord: 2.3ms | Allocations: 17916)
+
+
+Started GET "/users/auth/google_oauth2/get_refresh_token" for 127.0.0.1 at 2023-06-27 16:12:14 +0700
+Processing by Users::OmniauthCallbacksController#get_refresh_token as HTML
+  Parameters: {"provider"=>"google_oauth2"}
+[Devise] Could not find devise mapping for path "/users/auth/google_oauth2/get_refresh_token".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms | Allocations: 505)
+
+
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/users/auth/google_oauth2/get_refresh_token".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.9.2) app/controllers/devise_controller.rb:91:in `unknown_action!'
+devise (4.9.2) app/controllers/devise_controller.rb:66:in `assert_is_devise_resource!'
+activesupport (7.0.5) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.5) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.5) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.5) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.5) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.5) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.5) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.5) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.5) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.5) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.5) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.5) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.5) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.5) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.1) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (7.0.5) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.5) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.5) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.5) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.5) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.5) lib/rails/engine.rb:530:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:13:22 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 309)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1418)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2040)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 2807)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 16:13:24 +0700
+Started GET "/users/auth/google_oauth2/callback?state=93e9f28a7201d2609d9d38b3d843f5d0ccafa5e041d97e1b&code=4%2F0AbUR2VODZNaW2xEclQIDiLkVUkTyJMdqjKPd4z0qyESNFA8kj2v2f34YHWCo_i1Kt0dURw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent" for 127.0.0.1 at 2023-06-27 16:13:28 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"93e9f28a7201d2609d9d38b3d843f5d0ccafa5e041d97e1b", "code"=>"4/0AbUR2VODZNaW2xEclQIDiLkVUkTyJMdqjKPd4z0qyESNFA8kj2v2f34YHWCo_i1Kt0dURw", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "106344239749143214434"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 50562ms (ActiveRecord: 1.9ms | Allocations: 95219)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:14:19 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c405a9a0-2634-4d28-8079-c8e1e21304d7"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 5195)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 292)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 6081)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 2.3ms | Allocations: 7199)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:14:26 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c405a9a0-2634-4d28-8079-c8e1e21304d7"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 28.2ms | Allocations: 11412)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 565)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 13215)
+Completed 200 OK in 37ms (Views: 29.4ms | ActiveRecord: 2.9ms | Allocations: 17870)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-06-27 16:14:28 +0700
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c405a9a0-2634-4d28-8079-c8e1e21304d7"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 167ms (ActiveRecord: 0.5ms | Allocations: 3296)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:14:29 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1128)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 113)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 1804)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.5ms | Allocations: 2126)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:14:30 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1037)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 1643)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.6ms | Allocations: 1923)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:14:31 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1043)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 1649)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.5ms | Allocations: 1929)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:14:33 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1049)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1655)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1935)
+
+
+Started GET "/users/auth/google_oauth2/get_refresh_token?provider=google_oauth2" for 127.0.0.1 at 2023-06-27 16:14:34 +0700
+Processing by Users::OmniauthCallbacksController#get_refresh_token as HTML
+  Parameters: {"provider"=>"google_oauth2"}
+[Devise] Could not find devise mapping for path "/users/auth/google_oauth2/get_refresh_token?provider=google_oauth2".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms | Allocations: 501)
+
+
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/users/auth/google_oauth2/get_refresh_token?provider=google_oauth2".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.9.2) app/controllers/devise_controller.rb:91:in `unknown_action!'
+devise (4.9.2) app/controllers/devise_controller.rb:66:in `assert_is_devise_resource!'
+activesupport (7.0.5) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.5) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.5) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.5) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.5) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.5) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.5) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.5) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.5) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.5) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.5) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.5) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.5) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.5) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.1) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (7.0.5) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.5) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.5) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.5) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.5) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.5) lib/rails/engine.rb:530:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:14:37 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1048)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1653)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1926)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:14:39 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 3.7ms | Allocations: 912)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 18.9ms | Allocations: 3873)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 4576)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 5994)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 16:14:42 +0700
+Started GET "/users/auth/google_oauth2/callback?state=245b0e333815aa8416a5866d652b898b8a162c1d84f7794a&code=4%2F0AbUR2VPKYyrLun1rSdU0M_3ETdwHc0Std-hnKe7bqbTSNtuU5SMpnN89O6xQc7JKmXy9yw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent" for 127.0.0.1 at 2023-06-27 16:14:45 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"245b0e333815aa8416a5866d652b898b8a162c1d84f7794a", "code"=>"4/0AbUR2VPKYyrLun1rSdU0M_3ETdwHc0Std-hnKe7bqbTSNtuU5SMpnN89O6xQc7JKmXy9yw", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "106344239749143214434"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1420ms (ActiveRecord: 0.3ms | Allocations: 87556)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:14:47 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c405a9a0-2634-4d28-8079-c8e1e21304d7"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1815)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2590)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 2864)
+
+
+Started GET "/users/auth/google_oauth2/get_refresh_token?provider=google_oauth2" for 127.0.0.1 at 2023-06-27 16:14:50 +0700
+Processing by Users::OmniauthCallbacksController#get_refresh_token as HTML
+  Parameters: {"provider"=>"google_oauth2"}
+[Devise] Could not find devise mapping for path "/users/auth/google_oauth2/get_refresh_token?provider=google_oauth2".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 447)
+
+
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/users/auth/google_oauth2/get_refresh_token?provider=google_oauth2".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.9.2) app/controllers/devise_controller.rb:91:in `unknown_action!'
+devise (4.9.2) app/controllers/devise_controller.rb:66:in `assert_is_devise_resource!'
+activesupport (7.0.5) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.5) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.5) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.5) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.5) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.5) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.5) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.5) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.5) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.5) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.5) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.5) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.5) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.5) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.5) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.5) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.5) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.5) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.1) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.7) lib/rack/etag.rb:27:in `call'
+rack (2.2.7) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.7) lib/rack/head.rb:12:in `call'
+actionpack (7.0.5) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.5) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.7) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.7) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.5) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.5) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.5) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.5) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.7) lib/rack/method_override.rb:24:in `call'
+rack (2.2.7) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.5) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.7) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.5) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.5) lib/rails/engine.rb:530:in `call'
+puma (5.6.6) lib/puma/configuration.rb:252:in `call'
+puma (5.6.6) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.6) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.6) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.6) lib/puma/server.rb:443:in `process_client'
+puma (5.6.6) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/auth/google_oauth2/get_refresh_token?provider=google_oauth2" for 127.0.0.1 at 2023-06-27 16:17:53 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::OmniauthCallbacksController#get_refresh_token as HTML
+  Parameters: {"provider"=>"google_oauth2"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1690)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users/omniauth_callbacks_controller.rb:53:in `get_refresh_token'
+Started GET "/users/auth/google_oauth2/callback?state=245b0e333815aa8416a5866d652b898b8a162c1d84f7794a&code=4%2F0AbUR2VM2m3dPYbehO64bFx7DHhyHSvusZFUXLmHCos8RgYsJwMe_so9GzPZKxdVDiV4hyw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent" for 127.0.0.1 at 2023-06-27 16:18:04 +0700
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"245b0e333815aa8416a5866d652b898b8a162c1d84f7794a", "code"=>"4/0AbUR2VM2m3dPYbehO64bFx7DHhyHSvusZFUXLmHCos8RgYsJwMe_so9GzPZKxdVDiV4hyw", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent"}
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 966)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-27 16:18:04 +0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c405a9a0-2634-4d28-8079-c8e1e21304d7"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 2.5ms | Allocations: 10481)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:18:04 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c405a9a0-2634-4d28-8079-c8e1e21304d7"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2222)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 557)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3899)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.4ms | Allocations: 5333)
+
+
+Started GET "/users/auth/google_oauth2/get_refresh_token" for 127.0.0.1 at 2023-06-27 16:18:07 +0700
+Processing by Users::OmniauthCallbacksController#get_refresh_token as HTML
+  Parameters: {"provider"=>"google_oauth2"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 489)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users/omniauth_callbacks_controller.rb:53:in `get_refresh_token'
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:18:10 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c405a9a0-2634-4d28-8079-c8e1e21304d7"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1798)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2566)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 2845)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-06-27 16:18:12 +0700
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c405a9a0-2634-4d28-8079-c8e1e21304d7"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 10ms (ActiveRecord: 0.5ms | Allocations: 2913)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:18:12 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1134)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 113)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 1804)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 2126)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:18:13 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 853)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3559)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4258)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 5674)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 16:18:15 +0700
+Started GET "/users/auth/google_oauth2/callback?state=b511a5191a8ad82960dffd2fbc53b814c10ebc06de909f50&code=4%2F0AbUR2VOCS8-pICnlIPLQK8gJsbtr8FRd5KHToaBO1f4hf1GGoFXSO4KuSknVQXbXC-7WSw&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=8&prompt=consent" for 127.0.0.1 at 2023-06-27 16:18:18 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"b511a5191a8ad82960dffd2fbc53b814c10ebc06de909f50", "code"=>"4/0AbUR2VOCS8-pICnlIPLQK8gJsbtr8FRd5KHToaBO1f4hf1GGoFXSO4KuSknVQXbXC-7WSw", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"8", "prompt"=>"consent"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "101826747165782135158"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hkduy0803@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "provider", "uid") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "hkduy0803@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-27 09:18:19.042052"], ["updated_at", "2023-06-27 09:18:19.042052"], ["provider", "google_oauth2"], ["uid", "101826747165782135158"]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (37.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4445ms (ActiveRecord: 38.4ms | Allocations: 93143)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:18:23 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c35873d3-0413-4852-bb16-ef876ee4fb14"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1812)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 273)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2583)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 2857)
+
+
+Started GET "/users/auth/google_oauth2/get_refresh_token" for 127.0.0.1 at 2023-06-27 16:18:26 +0700
+Processing by Users::OmniauthCallbacksController#get_refresh_token as HTML
+  Parameters: {"provider"=>"google_oauth2"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 487)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users/omniauth_callbacks_controller.rb:53:in `get_refresh_token'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7334416522997531520)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRefreshTokenToUsers (20230627092604)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "refresh_token" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230627092604"]]
+  [1m[36mTRANSACTION (40.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7334416522997531520)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "1f4646fe-faee-471f-bd24-a57b688e81f7"]]
+  [1m[36mTRANSACTION (14.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "aa42c7c3-af88-413b-b198-b34b9e2af8ae"]]
+  [1m[36mTRANSACTION (53.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "2cf94c56-cefb-4c20-b7b9-3e7b2b546c8f"]]
+  [1m[36mTRANSACTION (35.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "c405a9a0-2634-4d28-8079-c8e1e21304d7"]]
+  [1m[36mTRANSACTION (33.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", "c35873d3-0413-4852-bb16-ef876ee4fb14"]]
+  [1m[36mTRANSACTION (56.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:31:37 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "c35873d3-0413-4852-bb16-ef876ee4fb14"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 5748)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 7225)
+Completed 200 OK in 19ms (Views: 10.7ms | ActiveRecord: 2.6ms | Allocations: 11880)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:31:40 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1058)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1612)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 1893)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:31:42 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 912)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 4088)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4738)
+Completed 200 OK in 16ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 12365)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 16:31:43 +0700
+Started GET "/users/auth/google_oauth2/callback?state=83f67685a09e278faf073a5dabf2ffd2f79890530fa69d39&code=4%2F0AbUR2VPwmZqTuHoRXqj81Jl5ieQEgKcvNfeEgLCnKy-AyjnzeySwvC9oTCcQDjypkOq-vg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=2&prompt=consent" for 127.0.0.1 at 2023-06-27 16:31:48 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"83f67685a09e278faf073a5dabf2ffd2f79890530fa69d39", "code"=>"4/0AbUR2VPwmZqTuHoRXqj81Jl5ieQEgKcvNfeEgLCnKy-AyjnzeySwvC9oTCcQDjypkOq-vg", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"2", "prompt"=>"consent"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "108343997463357728127"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "antipro.1995@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Create (14.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "provider", "uid", "refresh_token") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "antipro.1995@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-27 09:31:52.031515"], ["updated_at", "2023-06-27 09:31:52.031515"], ["provider", "google_oauth2"], ["uid", "108343997463357728127"], ["refresh_token", "[FILTERED]"]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (14.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 2684ms (ActiveRecord: 29.3ms | Allocations: 89924)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:31:52 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "b64ce885-89d4-4c6d-b2c5-9181d792f562"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1869)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 291)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2612)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 2888)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7334416522997531520)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAccessTokenToUsers (20230627093321)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "access_token" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230627093321"]]
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7334416522997531520)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-06-27 16:34:42 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "b64ce885-89d4-4c6d-b2c5-9181d792f562"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 26ms (ActiveRecord: 2.2ms | Allocations: 15144)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:34:42 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1770)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3247)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 5769)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:34:44 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 912)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3928)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4578)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 6009)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 16:34:45 +0700
+Started GET "/users/auth/google_oauth2/callback?state=299d6a9e3b6ebb976531878d3c3b8d997861577abfa453f5&code=4%2F0AbUR2VNvxd9G7BD1CdL-OOZeXWa1RhjGbrQQgpU_Fv7ykkjxxusoqtAIZQN1wIJ1E2pP8g&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=0&prompt=consent" for 127.0.0.1 at 2023-06-27 16:34:50 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"299d6a9e3b6ebb976531878d3c3b8d997861577abfa453f5", "code"=>"4/0AbUR2VNvxd9G7BD1CdL-OOZeXWa1RhjGbrQQgpU_Fv7ykkjxxusoqtAIZQN1wIJ1E2pP8g", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "106344239749143214434"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "phucloi.dev@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Create (6.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "provider", "uid", "refresh_token", "access_token") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "phucloi.dev@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-27 09:37:17.237588"], ["updated_at", "2023-06-27 09:37:17.237588"], ["provider", "google_oauth2"], ["uid", "106344239749143214434"], ["refresh_token", "[FILTERED]"], ["access_token", "[FILTERED]"]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (42.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 146089ms (ActiveRecord: 50.1ms | Allocations: 130170)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:37:17 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "d42189e6-7738-49cc-be9f-574ebcc7afd9"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1810)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 291)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2552)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 2827)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7334416522997531520)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAccessTokenToUsers (20230627093321)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "access_token"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230627093321"]]
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7334416522997531520)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-06-27 16:40:36 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "d42189e6-7738-49cc-be9f-574ebcc7afd9"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 33ms (ActiveRecord: 2.4ms | Allocations: 14661)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:40:36 +0700
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1790)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3267)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 5789)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:40:39 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1058)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1612)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 1892)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:40:42 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 63.7ms | Allocations: 238)
+  Rendered devise/shared/_links.html.erb (Duration: 8.4ms | Allocations: 912)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 266.6ms | Allocations: 3929)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 144)
+  Rendered layout layouts/application.html.erb (Duration: 268.0ms | Allocations: 4579)
+Completed 200 OK in 274ms (Views: 270.4ms | ActiveRecord: 0.0ms | Allocations: 6006)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-06-27 16:51:42 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 247)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 943)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 4479)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5936)
+Completed 200 OK in 35ms (Views: 12.0ms | ActiveRecord: 2.4ms | Allocations: 18315)
+
+
+Started POST "/users/auth/google_oauth2" for 127.0.0.1 at 2023-06-27 16:51:44 +0700
+Started GET "/users/auth/google_oauth2/callback?state=bcfd13ceee0f73222e7e11bce24300e6aa193b4d29a82936&code=4%2F0AbUR2VM0H5fH0xi4Nk5gcUBxN7F5NHGn3OlSKv7mE7Hn7_aS4OOPmO-AcHD_-wGT1ZIeyA&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=8&prompt=consent" for 127.0.0.1 at 2023-06-27 16:51:50 +0700
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"bcfd13ceee0f73222e7e11bce24300e6aa193b4d29a82936", "code"=>"4/0AbUR2VM0H5fH0xi4Nk5gcUBxN7F5NHGn3OlSKv7mE7Hn7_aS4OOPmO-AcHD_-wGT1ZIeyA", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"8", "prompt"=>"consent"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2 ORDER BY "users"."id" ASC LIMIT $3[0m  [["provider", "google_oauth2"], ["uid", "101826747165782135158"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hkduy0803@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mUser Create (237.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "provider", "uid", "refresh_token") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "hkduy0803@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-06-27 09:51:54.938655"], ["updated_at", "2023-06-27 09:51:54.938655"], ["provider", "google_oauth2"], ["uid", "101826747165782135158"], ["refresh_token", "[FILTERED]"]]
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+  [1m[36mTRANSACTION (94.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:9:in `create_from_provider_data'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 4115ms (ActiveRecord: 332.6ms | Allocations: 91783)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-27 16:51:55 +0700
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", "4ed2c8a5-9a1c-4a1c-8e41-7d6f4436b2cb"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 2276)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 293)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 3100)
+Completed 200 OK in 62ms (Views: 16.2ms | ActiveRecord: 0.9ms | Allocations: 4214)
+
+
